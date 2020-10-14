@@ -188,7 +188,7 @@ pub struct ParseFloatError {
 }
 
 impl fmt::Display for ParseFloatError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let description = match self.kind {
             FloatErrorKind::Empty => "cannot parse float from empty string",
             FloatErrorKind::Invalid => "invalid float literal",
